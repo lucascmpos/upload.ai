@@ -36,19 +36,20 @@ export function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="px-6 py-3 flex itens-center justify-between border-b">
-        <h1 className="text-xl font-bold">upload.ai</h1>
+        <h1 className="text-xl font-bold px-2">upload.ai</h1>
 
         <div className="flex itens-center gap-3">
-          <span className="text-sm text-muted-foreground">
-            Desenvolvido com ❤ no NLW da Rocketseat
+          <span className="text-sm text-muted-foreground py-2">
+            Desenvolvido com ❤ por Lucas Campos
           </span>
 
-          <Separator orientation="vertical" className="h-6" />
-
+          <Separator orientation="vertical" className="h-9" />
+          <a href="https://github.com/lucascmpos" target="_blank">
           <Button variant="outline">
             <Github className="w-4 h-4 mr-2" />
             Github
           </Button>
+          </a>
         </div>
       </div>
       <main className="flex-1 p-6 flex gap-6">
