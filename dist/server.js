@@ -15,6 +15,10 @@ app.register(get_all_prompts_1.getAllPromptsRoute);
 app.register(upload_video_1.uploadVideoRoute);
 app.register(create_transcription_1.createTranscriptionRoute);
 app.register(generate_ai_completion_1.generateAICompletionRoute);
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+app.listen(port, '0.0.0.0', (err, address) => {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+    console.log(`Server listening on ${address}`);
+});

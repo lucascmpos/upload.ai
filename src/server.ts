@@ -18,6 +18,10 @@ app.register(uploadVideoRoute)
 app.register(createTranscriptionRoute)
 app.register(generateAICompletionRoute)
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
+app.listen(port, '0.0.0.0', (err, address) => {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+    console.log(`Server listening on ${address}`);
+});
