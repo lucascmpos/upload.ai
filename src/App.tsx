@@ -35,24 +35,26 @@ export function App() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="px-6 py-3 flex itens-center justify-between border-b">
-        <h1 className="text-xl font-bold px-2">upload.ai</h1>
+      <div className="px-6 py-3 md:flex items-center justify-between border-b">
+        <h1 className="text-2xl font-bold px-2">upload.ai</h1>
 
-        <div className="flex itens-center gap-3">
+        <div className="flex items-center justify-between gap-3">
           <span className="text-sm text-muted-foreground py-2">
-            Desenvolvido com ❤ por Lucas Campos
+            Desenvolvido por <a href="https://lucascampos-portfolio.vercel.app/" target="_blank" className="text-primary">Lucas Campos</a>
           </span>
 
-          <Separator orientation="vertical" className="h-9" />
+          <div className="flex gap-3">
+          <Separator orientation="vertical" className="h-9 hidden md:block" />
           <a href="https://github.com/lucascmpos" target="_blank">
           <Button variant="outline">
             <Github className="w-4 h-4 mr-2" />
             Github
           </Button>
           </a>
+          </div>
         </div>
       </div>
-      <main className="flex-1 p-6 flex gap-6">
+      <main className="flex-1 p-6 md:flex gap-6">
         <div className="flex flex-col flex-1 gap-4">
           <div className="grid grid-rows-2 gap-4 flex-1">
             <Textarea
