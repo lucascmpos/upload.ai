@@ -22,7 +22,7 @@ export function App() {
     completion,
     isLoading,
   } = useCompletion({
-    api: "http://35.160.120.126/ai/complete",
+    api: "https://upload-ai-1xt6.onrender.com/ai/complete",
     body: {
       videoId,
       temperatura,
