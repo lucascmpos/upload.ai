@@ -22,7 +22,7 @@ export function App() {
     completion,
     isLoading,
   } = useCompletion({
-    api: "https://upload-aibackend.vercel.app/ai/complete",
+    api: "http://35.160.120.126/ai/complete",
     body: {
       videoId,
       temperatura,
