@@ -7,6 +7,7 @@ import { createTranscriptionRoute } from "./routes/create-transcription";
 import { generateAICompletionRoute } from "./routes/generate-ai-completion";
 
 const app = fastify()
+const port = process.env.PORT || 10000
 
 app.register(fastifyCors, {
     origin: '*',
@@ -17,8 +18,6 @@ app.register(uploadVideoRoute)
 app.register(createTranscriptionRoute)
 app.register(generateAICompletionRoute)
 
-app.listen({
-    port: 10000,
-}).then(() => {
-    console.log('HTTP Server Running!')
-})
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });

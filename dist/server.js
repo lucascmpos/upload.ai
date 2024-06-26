@@ -7,6 +7,7 @@ const upload_video_1 = require("./routes/upload-video");
 const create_transcription_1 = require("./routes/create-transcription");
 const generate_ai_completion_1 = require("./routes/generate-ai-completion");
 const app = (0, fastify_1.fastify)();
+const port = process.env.PORT || 10000
 app.register(cors_1.fastifyCors, {
     origin: '*',
 });
@@ -14,8 +15,6 @@ app.register(get_all_prompts_1.getAllPromptsRoute);
 app.register(upload_video_1.uploadVideoRoute);
 app.register(create_transcription_1.createTranscriptionRoute);
 app.register(generate_ai_completion_1.generateAICompletionRoute);
-app.listen({
-    port: 10000,
-}).then(() => {
-    console.log('HTTP Server Running!');
-});
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
