@@ -43,11 +43,9 @@ export function App() {
       <div className="px-6 py-3 gap-1 flex items-center justify-between border-b">
         <div className="flex flex-col">
           <h1 className="text-2xl font-bold ">upload.ai</h1>
-          <span className="text-xs font-semibold text-muted-foreground/70 ">
+          <span className="text-xs font-semibold text-muted-foreground/70">
             transcrição de vídeo para aúdio utilizando inteligência artificial
           </span>
-
-          <div className="flex items-center justify-between gap-3"></div>
         </div>
 
         <Separator orientation="vertical" className="h-9 md:hidden  mx-4" />
@@ -62,6 +60,7 @@ export function App() {
           <a href="https://lucascampos-portfolio.vercel.app" target="_blank">
             <Button variant="outline" className="px-6">
               <UserCircle className="w-4 h-4 mr-2" />
+              
               Portfólio
             </Button>
           </a>
