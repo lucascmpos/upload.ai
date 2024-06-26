@@ -92,9 +92,10 @@ export function App() {
           </p>
         </div>
         <aside className="md:w-72  space-y-6">
-          <p className="text-xs font-semibold mb-3 md:mb-0 text-muted-foreground/70">
-            Você só pode colocar vídeos que você tem baixado no seu dispositivo.
-          </p>
+          <span className="text-xs font-semibold mb-3 md:mb-0 text-muted-foreground/70">
+            Você só pode selecionar vídeos que estão baixados no seu
+            dispositivo.
+          </span>
           <VideoInputForm onVideoUploaded={setVideoId} />
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
