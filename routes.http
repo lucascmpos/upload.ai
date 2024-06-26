@@ -1,11 +1,11 @@
 
 # @name get-prompts
-GET http://localhost:3333/prompts
+GET https://upload-aibackend.vercel.app/prompts
 
 ###
 
 # @name upload-video
-POST http://localhost:3333/videos
+POST https://upload-aibackend.vercel.app/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
@@ -19,7 +19,7 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/26beff36-37ed-4486-97af-b1a476d4d829/transcription
+POST https://upload-aibackend.vercel.app/videos/26beff36-37ed-4486-97af-b1a476d4d829/transcription
 Content-Type: application/json
 
 {
@@ -29,7 +29,7 @@ Content-Type: application/json
 ###
 
 # @name generate-ai-completion
-POST http://localhost:3333/ai/complete
+POST https://upload-aibackend.vercel.app/ai/complete
 Content-Type: application/json
 
 {
