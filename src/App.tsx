@@ -51,7 +51,7 @@ export function App() {
         <Separator orientation="vertical" className="h-9 md:hidden  mx-4" />
 
         <div className="flex items-center md:flex-row flex-col gap-3">
-          <a href="https://github.com/lucascmpos" target="_blank">
+          <a href="https://github.com/lucascmpos/upload.ai" target="_blank">
             <Button variant="outline" className="px-4">
               <Github className="w-4 h-4 mr-2" />
               Repositório
@@ -60,7 +60,6 @@ export function App() {
           <a href="https://lucascampos-portfolio.vercel.app" target="_blank">
             <Button variant="outline" className="px-6">
               <UserCircle className="w-4 h-4 mr-2" />
-              
               Portfólio
             </Button>
           </a>
@@ -68,22 +67,28 @@ export function App() {
       </div>
       <main className="flex-1 p-6 md:flex  gap-6">
         <div className="flex flex-col flex-1 gap-4">
-          <div className="grid grid-rows-2 gap-4 flex-1">
+          <div className="md:grid md:grid-rows-2 flex flex-col gap-4 flex-1">
             <Textarea
-              className="resize-none p-4 leading-relaxed"
+              className="md:resize-none p-4 md:h-auto h-32 leading-relaxed"
               placeholder="Inclua o prompt para a IA..."
               value={input}
               onChange={handleInputChange}
             />
+            <p className="text-sm md:hidden block  md:mb-0 text-muted-foreground">
+              Lembre-se: você deve utilizar a variável{" "}
+              <code className="text-violet-400">{"{transcription}"}</code> no
+              seu prompt para adicionar o conteúdo da transcrição do vídeo
+              carregado, assim podendo comentar sobre o vídeo.
+            </p>
             <Textarea
-              className="resize-none p-4 leading-relaxed"
+              className="md:resize-none p-4 md:h-auto h-64 leading-relaxed"
               placeholder="Resultado gerado pela IA..."
               readOnly
               value={completion}
             />
           </div>
 
-          <p className="text-sm mb-3 md:mb-0 text-muted-foreground">
+          <p className="text-sm hidden md:block mb-3 md:mb-0 text-muted-foreground">
             Lembre-se: você pode utilizar a variável{" "}
             <code className="text-violet-400">{"{transcription}"}</code> no seu
             prompt para adicionar o conteúdo da transcrição do vídeo
@@ -91,11 +96,15 @@ export function App() {
           </p>
         </div>
         <aside className="md:w-72  space-y-6">
-          <span className="text-xs font-semibold mb-3 md:mb-0 text-muted-foreground/70">
+          <span className="text-xs hidden md:block font-semibold mb-3 md:mb-0 text-muted-foreground/70">
             Você só pode selecionar vídeos que estão baixados no seu
             dispositivo.
           </span>
           <VideoInputForm onVideoUploaded={setVideoId} />
+          <span className="text-xs md:hidden block font-semibold mb-3 md:mb-0 text-muted-foreground/70">
+            Você só pode selecionar vídeos que estão baixados no seu
+            dispositivo.
+          </span>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label>Prompt</Label>
